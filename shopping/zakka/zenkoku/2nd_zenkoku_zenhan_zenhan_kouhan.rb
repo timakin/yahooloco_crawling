@@ -6,6 +6,8 @@ require 'timeout'
 require 'csv'
 require 'nkf'
 
+
+begin
 (1..9).each do |hogya|
   p "産　業　が　か　わ　っ　た　よ　ん"
 (1..9).each do |fuga|
@@ -58,5 +60,10 @@ require 'nkf'
 end
 end
 end
+end
+rescue => e
+  STDERR.puts e
+rescue Timeout::Error => e
+  STDERR.puts e
 end
 

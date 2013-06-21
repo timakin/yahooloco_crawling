@@ -6,6 +6,8 @@ require 'timeout'
 require 'csv'
 require 'nkf'
 
+
+begin
 (10..20).each do |hogya|
 (10..25).each do |hoge|
   p "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-#{hoge}"
@@ -54,4 +56,9 @@ require 'nkf'
   end
 end
 end
+end
+rescue => e
+  STDERR.puts e
+rescue Timeout::Error => e
+  STDERR.puts e
 end
